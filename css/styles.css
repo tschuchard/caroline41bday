@@ -127,11 +127,11 @@ body {
 }
 
 .phrase-container {
-    height: 120px;
+    height: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 12rem;
 }
 
 .phrase {
@@ -147,17 +147,17 @@ body {
 
 .phrase.slide-in-down {
     opacity: 0;
-    transform: translateY(-120px) scale(0.8);
+    transform: translateY(-100px) scale(0.8);
 }
 
 .phrase.slide-out-down {
     opacity: 0;
-    transform: translateY(150px) scale(0.8);
+    transform: translateY(50px) scale(0.5);
 }
 
 .phrase.active {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(40px) scale(1);
 }
 
 /* Refresh Button */

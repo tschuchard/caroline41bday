@@ -8,7 +8,7 @@ const phrases = [
     "making memories",
     "fun times",
     "spreading joy",
-    "being incredible",
+    "growing relationships",
     "creating magic"
 ];
 
@@ -126,7 +126,7 @@ function showNextPhraseWithSlideDown() {
         // First phrase: slide down from above
         const words = phrases[currentPhraseIndex].split(' ');
         currentPhrase.innerHTML = `<div>${words[0]}</div><div>${words[1]}</div>`;
-        currentPhrase.className = 'phrase slide-in-down';
+        currentPhrase.className = 'phrase slide-out-down';
         
         // Trigger animation after a brief delay
         setTimeout(() => {
