@@ -76,7 +76,7 @@ body {
 
 .counter {
     font-family: 'Galindo', cursive;
-    font-size: clamp(8rem, 25vw, 12rem);
+    font-size: clamp(10rem, 25vw, 12rem);
     font-weight: 400;
     color: #E8384F;
     margin-bottom: 0rem;
@@ -103,7 +103,8 @@ body {
 
 .years-of {
     font-family: 'WindSong', cursive;
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1.0;
+    font-size: clamp(3.5rem, 8vw, 10rem);
     color: #E8384F;
     margin-bottom: 3rem;
     /* Start visible */
@@ -131,12 +132,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 12rem;
+    margin-bottom: 8rem;
 }
 
 .phrase {
     font-family: 'Galindo', cursive;
-    font-size: clamp(2.5rem, 7vw, 3.5rem);
+    font-size: clamp(2.75rem, 7vw, 3.5rem);
+    line-height: 1.1;
     color: #fefefe;
     position: absolute;
     /* Start visible */
@@ -171,7 +173,8 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-top: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
 }
@@ -201,7 +204,7 @@ body {
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 2rem;
+    bottom: 5rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

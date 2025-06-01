@@ -161,7 +161,7 @@ function showNextPhraseWithSlideDown() {
         }, 600); // Half of transition duration (1.2s = 1200ms)
         
         // Schedule next phrase change (much slower)
-        setTimeout(showNextPhraseWithSlideDown, 3500);
+        setTimeout(showNextPhraseWithSlideDown, 2500);
     }
 }
 
