@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 41st Birthday Caroline! 🎉</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&family=WindSong:wght@400;500&family=Galindo&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+</head>
+<body>
+    <!-- Hero Section with main animation -->
+    <section class="hero-section">
+        <!-- Sparkling dots grid background -->
+        <div class="sparkling-grid" id="sparklingGrid"></div>
+        
+        <div class="counter" id="counter">0</div>
+        <div class="years-of" id="yearsOf">years of</div>
+        <div class="phrase-container">
+            <div class="phrase" id="currentPhrase"></div>
+        </div>
+        
+        <!-- Refresh Button -->
+        <button class="refresh-btn" id="refreshBtn" title="Start Animation Again">
+            <div class="refresh-icon">↻</div>
+        </button>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i data-lucide="chevron-down" style="width: 24px; height: 24px; stroke-width: 1.5;"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Message Section -->
+    <section class="birthday-section">
+        <h1 class="birthday-title" id="birthdayTitle">Happy Birthday</h1>
+        <h2 class="my-love-text">my love</h2>
+    </section>
+
+    <!-- Statistics Cards Section -->
+    <section class="stats-section">
+        <!-- Sparkling dots grid background -->
+        <div class="sparkling-grid" id="sparklingGridStats"></div>
+        
+        <h2 class="stats-headline">Looking back at our time together</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i data-lucide="heart" class="stat-icon"></i>
+                <div class="stat-number">18</div>
+                <div class="stat-label">Years together</div>
+            </div>
+            <div class="stat-card">
+                <i data-lucide="baby" class="stat-icon"></i>
+                <div class="stat-number">2</div>
+                <div class="stat-label">Amazing daughters</div>
+            </div>
+            <div class="stat-card">
+                <i data-lucide="dog" class="stat-icon"></i>
+                <div class="stat-number">7</div>
+                <div class="stat-label">Fun-loving K9s</div>
+            </div>
+            <div class="stat-card">
+                <i data-lucide="cat" class="stat-icon"></i>
+                <div class="stat-number">2</div>
+                <div class="stat-label">Cuddly clawed creatures</div>
+            </div>
+            <div class="stat-card">
+                <i data-lucide="bird" class="stat-icon"></i>
+                <div class="stat-number">10</div>
+                <div class="stat-label">Chirpy chicks</div>
+            </div>
+            <div class="stat-card">
+                <i data-lucide="car" class="stat-icon"></i>
+                <div class="stat-number">A Lot!</div>
+                <div class="stat-label">Cars owned</div>
+            </div>
+            <div class="stat-card">
+                <i data-lucide="home" class="stat-icon"></i>
+                <div class="stat-number">8</div>
+                <div class="stat-label">Homes we called home</div>
+            </div>
+            <div class="stat-card">
+                <i data-lucide="map-pin" class="stat-icon"></i>
+                <div class="stat-number">3</div>
+                <div class="stat-label">Cities explored</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="copyright">© 1984 Happy Birthday</span>
+            </div>
+            <div class="footer-right">
+                <i data-lucide="cake" class="footer-icon"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+</body>
+</html>

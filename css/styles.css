@@ -1,0 +1,438 @@
+/* Caroline's 41st Birthday - Main Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Lucide icon styling */
+i[data-lucide] {
+    stroke-width: 1.5;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #171515 0%, #7C1F33 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Sparkling dots grid background */
+.sparkling-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.stats-section .sparkling-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.sparkle-dot {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fefefe;
+    border-radius: 50%;
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+.sparkle-dot.large {
+    width: 3px;
+    height: 3px;
+}
+
+.sparkle-dot.small {
+    width: 1px;
+    height: 1px;
+}
+
+.counter {
+    font-family: 'Galindo', cursive;
+    font-size: clamp(8rem, 25vw, 12rem);
+    font-weight: 400;
+    color: #ff6b6b;
+    margin-bottom: 0rem;
+    line-height: 1.0;
+    /* Start visible, animate if JS loads */
+    opacity: 1;
+    transform: scale(1);
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.counter.floating {
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+.counter.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.counter.preparing-animation {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.years-of {
+    font-family: 'WindSong', cursive;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: #ff6b6b;
+    margin-bottom: 3rem;
+    /* Start visible */
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease-out;
+}
+
+.years-of.floating {
+    animation: gentleFloat 4s ease-in-out infinite 0.5s;
+}
+
+.years-of.preparing-animation {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.years-of.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.phrase-container {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.phrase {
+    font-family: 'Galindo', cursive;
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+    color: #fefefe;
+    position: absolute;
+    /* Start visible */
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.phrase.slide-in-down {
+    opacity: 0;
+    transform: translateY(-120px) scale(0.8);
+}
+
+.phrase.slide-out-down {
+    opacity: 0;
+    transform: translateY(150px) scale(0.8);
+}
+
+.phrase.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Refresh Button */
+.refresh-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ff6b6b;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 4rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.refresh-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    background-color: #ff5252;
+}
+
+.refresh-btn:active {
+    transform: translateY(0);
+}
+
+.refresh-icon {
+    font-size: 40px;
+    color: #fefefe;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.refresh-btn:hover .refresh-icon {
+    transform: rotate(180deg);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #e0e0e0;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-text {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.scroll-arrow {
+    animation: bounce 2s infinite;
+}
+
+/* Birthday Section */
+.birthday-section {
+    padding: 6rem 2rem 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #333333 0%, #1c1c1c 100%);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.birthday-title {
+    font-family: 'WindSong', cursive;
+    font-size: clamp(2rem, 8vw, 3rem);
+    color: #fefefe;
+    margin-bottom: 0.125rem;
+    line-height: 1.0;
+    /* Start visible */
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease-out;
+}
+
+.birthday-title.floating {
+    animation: gentleFloat 4.5s ease-in-out infinite;
+}
+
+.birthday-title.preparing-animation {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.birthday-title.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.my-love-text {
+    font-family: 'Galindo', cursive;
+    font-size: clamp(4rem, 12vw, 8rem);
+    color: #ff6b6b;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    /* Start visible */
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease-out;
+}
+
+.my-love-text.floating {
+    animation: gentleFloat 4.5s ease-in-out infinite 0.75s;
+}
+
+.my-love-text.preparing-animation {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.my-love-text.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #631525 0%, #15062A 100%);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stats-headline {
+    font-family: 'Galindo', cursive;
+    font-size: clamp(2rem, 8vw, 4rem);
+    color: #fefefe;
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.0;
+    /* Start visible */
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease-out;
+}
+
+.stats-headline.preparing-animation {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.stats-headline.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-card {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    /* Start with animation preparation */
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stat-card.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    color: #ff6b6b;
+    stroke-width: 1.5;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    opacity: 0.9;
+}
+
+/* Footer */
+.page-footer {
+    background: linear-gradient(135deg, #23023C 0%, #171515 100%);
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left .copyright {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #fefefe;
+    font-weight: 300;
+}
+
+.footer-right .footer-icon {
+    width: 24px;
+    height: 24px;
+    color: #ff6b6b;
+    stroke-width: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .hero-section {
+        padding: 1rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .footer-left .copyright {
+        font-size: 0.9rem;
+    }
+}
